@@ -51,12 +51,14 @@ p, li, a, summary, dt, dd, span {
   gap: 12px;
   font-weight: 700;
   letter-spacing: 0.01em;
+  font-size: 1.08rem;
 }
 
 .brand img {
-  width: 36px;
-  height: 36px;
+  width: 56px;
+  height: 56px;
   object-fit: contain;
+  flex: 0 0 auto;
 }
 
 .section { padding: 34px 0; }
@@ -267,6 +269,9 @@ p, li, a, summary, dt, dd, span {
   width: 100%;
   border-radius: var(--radius);
   box-shadow: var(--shadow);
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center 22%;
 }
 
 .teacher-copy h2 {
@@ -278,12 +283,25 @@ p, li, a, summary, dt, dd, span {
 .trust-gallery {
   display: grid;
   gap: 14px;
+  grid-auto-rows: 1fr;
 }
 
 .trust-gallery img {
   width: 100%;
-  border-radius: 20px;
+  height: 100%;
+  min-height: 260px;
+  border-radius: 22px;
   box-shadow: var(--shadow);
+  object-fit: cover;
+  background: #eadfd6;
+}
+
+.trust-gallery img:first-child {
+  aspect-ratio: 1.25 / 1;
+}
+
+.trust-gallery img:last-child {
+  aspect-ratio: 1 / 1;
 }
 
 .price-card {
@@ -400,6 +418,11 @@ p, li, a, summary, dt, dd, span {
 }
 
 @media (max-width: 759px) {
+  .brand img {
+    width: 48px;
+    height: 48px;
+  }
+
   .hero-copy,
   .card,
   .feature,
@@ -419,5 +442,9 @@ p, li, a, summary, dt, dd, span {
 
   .lesson-list {
     padding: 20px 18px 20px 36px;
+  }
+
+  .trust-gallery img {
+    min-height: 220px;
   }
 }
