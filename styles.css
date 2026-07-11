@@ -1,29 +1,36 @@
 :root {
-  --bg: #f4ede6;
-  --paper: #fffaf5;
-  --ink: #1f1715;
-  --muted: #67544d;
-  --accent: #b6452c;
-  --accent-dark: #922f1a;
-  --line: #dbc9bd;
-  --soft: #ead7cb;
-  --shadow: 0 20px 45px rgba(73, 41, 31, 0.12);
-  --radius: 24px;
+  --bg: #f7efe7;
+  --paper: #fffaf6;
+  --paper-strong: #fffdf9;
+  --ink: #221714;
+  --muted: #65514b;
+  --accent: #bc4a2f;
+  --accent-dark: #93311b;
+  --accent-soft: #f6dfd2;
+  --line: #decabb;
+  --soft: #efe0d5;
+  --shadow: 0 24px 60px rgba(72, 39, 29, 0.12);
+  --shadow-soft: 0 14px 28px rgba(72, 39, 29, 0.08);
+  --radius: 28px;
 }
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
   margin: 0;
-  font-family: "Segoe UI", Tahoma, sans-serif;
+  font-family: Georgia, "Times New Roman", serif;
   color: var(--ink);
   background:
-    radial-gradient(circle at top left, rgba(255,255,255,0.8), transparent 34%),
-    linear-gradient(180deg, #f7f0ea 0%, #f1e3d8 100%);
+    radial-gradient(circle at top left, rgba(255,255,255,0.88), transparent 30%),
+    radial-gradient(circle at 85% 12%, rgba(246, 223, 210, 0.75), transparent 22%),
+    linear-gradient(180deg, #fbf4ee 0%, #f2e3d7 52%, #efddd0 100%);
 }
 
 img { display: block; max-width: 100%; }
 a { color: inherit; text-decoration: none; }
+p, li, a, summary, dt, dd, span {
+  font-family: "Segoe UI", Tahoma, sans-serif;
+}
 
 .site-header, .section, .site-footer {
   width: min(1120px, calc(100% - 32px));
@@ -31,7 +38,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .site-header {
-  padding: 18px 0;
+  padding: 22px 0 8px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -43,6 +50,7 @@ a { color: inherit; text-decoration: none; }
   align-items: center;
   gap: 12px;
   font-weight: 700;
+  letter-spacing: 0.01em;
 }
 
 .brand img {
@@ -51,37 +59,41 @@ a { color: inherit; text-decoration: none; }
   object-fit: contain;
 }
 
-.section { padding: 28px 0; }
+.section { padding: 34px 0; }
 
 .hero {
-  padding-top: 18px;
+  padding-top: 12px;
   display: grid;
   gap: 24px;
 }
 
 .hero-copy, .hero-visual, .card, .price-card, .included-card, .final-cta-box {
-  background: rgba(255, 250, 245, 0.94);
-  border: 1px solid rgba(219, 201, 189, 0.95);
+  background: rgba(255, 250, 246, 0.94);
+  border: 1px solid rgba(222, 202, 187, 0.95);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
 }
 
 .hero-copy {
-  padding: 28px;
+  padding: 34px;
+  background:
+    linear-gradient(135deg, rgba(255,255,255,0.72), transparent 46%),
+    linear-gradient(180deg, rgba(255,251,247,0.98), rgba(253,243,236,0.95));
 }
 
 .hero h1 {
   margin: 8px 0 14px;
-  font-size: clamp(2.2rem, 8vw, 4.6rem);
-  line-height: 0.95;
+  font-size: clamp(2.4rem, 8vw, 4.9rem);
+  line-height: 0.92;
   letter-spacing: -0.04em;
 }
 
 .lead {
   margin: 0;
-  font-size: 1.02rem;
-  line-height: 1.6;
+  font-size: 1.08rem;
+  line-height: 1.7;
   color: var(--muted);
+  max-width: 58ch;
 }
 
 .hero-meta {
@@ -92,16 +104,19 @@ a { color: inherit; text-decoration: none; }
 }
 
 .hero-meta span {
-  padding: 10px 12px;
+  padding: 11px 14px;
   border-radius: 999px;
-  background: var(--soft);
+  background: linear-gradient(180deg, #f8e6da 0%, #f1d8c9 100%);
+  border: 1px solid rgba(188, 74, 47, 0.12);
   font-size: 0.92rem;
+  font-weight: 600;
 }
 
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
+  margin-top: 6px;
 }
 
 .primary-button,
@@ -111,22 +126,24 @@ a { color: inherit; text-decoration: none; }
   align-items: center;
   justify-content: center;
   min-height: 48px;
-  padding: 0 18px;
+  padding: 0 20px;
   border-radius: 999px;
   font-weight: 700;
-  transition: transform .15s ease, background .15s ease;
+  transition: transform .15s ease, background .15s ease, box-shadow .15s ease;
 }
 
 .primary-button {
-  background: var(--accent);
+  background: linear-gradient(180deg, #cb5639 0%, #b54027 100%);
   color: #fff9f5;
+  box-shadow: 0 12px 24px rgba(181, 64, 39, 0.22);
 }
 
-.primary-button:hover { background: var(--accent-dark); transform: translateY(-1px); }
+.primary-button:hover { background: linear-gradient(180deg, #c74c2f 0%, #9d341d 100%); transform: translateY(-1px); box-shadow: 0 14px 26px rgba(157, 52, 29, 0.26); }
 
 .secondary-button, .ghost-button {
   border: 1px solid var(--line);
-  background: var(--paper);
+  background: rgba(255, 253, 249, 0.88);
+  box-shadow: var(--shadow-soft);
 }
 
 .large { width: 100%; }
@@ -138,19 +155,29 @@ a { color: inherit; text-decoration: none; }
 
 .hero-visual {
   overflow: hidden;
+  position: relative;
+}
+
+.hero-visual::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 38%;
+  background: linear-gradient(180deg, transparent, rgba(34, 23, 20, 0.16));
+  pointer-events: none;
 }
 
 .hero-visual img {
   width: 100%;
   height: 100%;
-  min-height: 320px;
+  min-height: 400px;
   object-fit: cover;
 }
 
 .eyebrow {
   margin: 0 0 8px;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   font-size: 0.76rem;
   color: var(--accent-dark);
   font-weight: 800;
@@ -158,30 +185,41 @@ a { color: inherit; text-decoration: none; }
 
 .section-heading h2 {
   margin: 0;
-  font-size: clamp(1.6rem, 5vw, 2.8rem);
-  line-height: 1.05;
+  font-size: clamp(1.7rem, 5vw, 3rem);
+  line-height: 1.02;
+  max-width: 16ch;
 }
 
 .card-grid, .feature-grid, .trust-grid {
   display: grid;
-  gap: 16px;
-  margin-top: 18px;
+  gap: 18px;
+  margin-top: 22px;
 }
 
 .card, .feature, .price-card, .included-card, .final-cta-box {
-  padding: 22px;
+  padding: 24px;
 }
 
 .card ul, .included-card ul { margin: 0; padding-left: 18px; line-height: 1.7; }
 .card p, .feature p, .teacher-copy p, .price-card p { line-height: 1.65; }
-.accent { background: linear-gradient(180deg, #fff6ef 0%, #f7e5d8 100%); }
+.accent { background: linear-gradient(180deg, #fff7f1 0%, #f4dfd1 100%); }
 .centered-actions { justify-content: center; }
 
 .feature-grid { grid-template-columns: 1fr; }
 .feature {
   border: 1px solid var(--line);
-  border-radius: 20px;
-  background: rgba(255,255,255,0.6);
+  border-radius: 22px;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.76), rgba(255,247,240,0.72));
+  box-shadow: var(--shadow-soft);
+}
+
+.feature h3,
+.card h3,
+.bonus-box h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.08rem;
 }
 
 .journey-flow {
@@ -200,22 +238,28 @@ a { color: inherit; text-decoration: none; }
 }
 
 .lesson-list {
-  margin: 18px 0 0;
+  margin: 20px 0 0;
   padding-left: 20px;
-  line-height: 1.8;
+  line-height: 1.85;
+  background: rgba(255, 251, 247, 0.72);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  padding: 22px 22px 22px 40px;
+  box-shadow: var(--shadow-soft);
 }
 
 .bonus-box {
-  margin-top: 18px;
-  padding: 18px;
+  margin-top: 20px;
+  padding: 20px;
   border-left: 4px solid var(--accent);
-  background: #fff3ec;
+  background: linear-gradient(180deg, #fff3ec 0%, #fbe7db 100%);
   border-radius: 16px;
+  box-shadow: var(--shadow-soft);
 }
 
 .teacher-layout {
   display: grid;
-  gap: 16px;
+  gap: 22px;
   align-items: center;
 }
 
@@ -225,9 +269,15 @@ a { color: inherit; text-decoration: none; }
   box-shadow: var(--shadow);
 }
 
+.teacher-copy h2 {
+  margin-top: 0;
+  margin-bottom: 14px;
+  font-size: clamp(1.8rem, 4vw, 2.7rem);
+}
+
 .trust-gallery {
   display: grid;
-  gap: 12px;
+  gap: 14px;
 }
 
 .trust-gallery img {
@@ -238,6 +288,9 @@ a { color: inherit; text-decoration: none; }
 
 .price-card {
   text-align: center;
+  background:
+    radial-gradient(circle at top center, rgba(255,255,255,0.76), transparent 44%),
+    linear-gradient(180deg, #fff8f4 0%, #f5e2d6 100%);
 }
 
 .status-box,
@@ -290,16 +343,17 @@ a { color: inherit; text-decoration: none; }
 }
 
 .faq-list {
-  margin-top: 18px;
+  margin-top: 20px;
   display: grid;
-  gap: 10px;
+  gap: 12px;
 }
 
 .faq-list details {
-  background: var(--paper);
+  background: rgba(255, 251, 247, 0.92);
   border: 1px solid var(--line);
   border-radius: 18px;
   padding: 16px 18px;
+  box-shadow: var(--shadow-soft);
 }
 
 .faq-list summary {
@@ -309,6 +363,9 @@ a { color: inherit; text-decoration: none; }
 
 .final-cta-box {
   text-align: center;
+  background:
+    radial-gradient(circle at top center, rgba(255,255,255,0.64), transparent 40%),
+    linear-gradient(180deg, #fff7f1 0%, #f4dfd2 100%);
 }
 
 .site-footer {
@@ -340,4 +397,27 @@ a { color: inherit; text-decoration: none; }
 
 @media (min-width: 1080px) {
   .feature-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+@media (max-width: 759px) {
+  .hero-copy,
+  .card,
+  .feature,
+  .price-card,
+  .included-card,
+  .final-cta-box {
+    padding: 22px;
+  }
+
+  .hero-visual img {
+    min-height: 300px;
+  }
+
+  .section-heading h2 {
+    max-width: none;
+  }
+
+  .lesson-list {
+    padding: 20px 18px 20px 36px;
+  }
 }
