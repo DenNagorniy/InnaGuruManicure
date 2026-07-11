@@ -1,0 +1,343 @@
+:root {
+  --bg: #f4ede6;
+  --paper: #fffaf5;
+  --ink: #1f1715;
+  --muted: #67544d;
+  --accent: #b6452c;
+  --accent-dark: #922f1a;
+  --line: #dbc9bd;
+  --soft: #ead7cb;
+  --shadow: 0 20px 45px rgba(73, 41, 31, 0.12);
+  --radius: 24px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at top left, rgba(255,255,255,0.8), transparent 34%),
+    linear-gradient(180deg, #f7f0ea 0%, #f1e3d8 100%);
+}
+
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+
+.site-header, .section, .site-footer {
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.site-header {
+  padding: 18px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 700;
+}
+
+.brand img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+
+.section { padding: 28px 0; }
+
+.hero {
+  padding-top: 18px;
+  display: grid;
+  gap: 24px;
+}
+
+.hero-copy, .hero-visual, .card, .price-card, .included-card, .final-cta-box {
+  background: rgba(255, 250, 245, 0.94);
+  border: 1px solid rgba(219, 201, 189, 0.95);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.hero-copy {
+  padding: 28px;
+}
+
+.hero h1 {
+  margin: 8px 0 14px;
+  font-size: clamp(2.2rem, 8vw, 4.6rem);
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+}
+
+.lead {
+  margin: 0;
+  font-size: 1.02rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 22px 0;
+}
+
+.hero-meta span {
+  padding: 10px 12px;
+  border-radius: 999px;
+  background: var(--soft);
+  font-size: 0.92rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.primary-button,
+.secondary-button,
+.ghost-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 18px;
+  border-radius: 999px;
+  font-weight: 700;
+  transition: transform .15s ease, background .15s ease;
+}
+
+.primary-button {
+  background: var(--accent);
+  color: #fff9f5;
+}
+
+.primary-button:hover { background: var(--accent-dark); transform: translateY(-1px); }
+
+.secondary-button, .ghost-button {
+  border: 1px solid var(--line);
+  background: var(--paper);
+}
+
+.large { width: 100%; }
+
+.micro-copy, .small-note {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.hero-visual {
+  overflow: hidden;
+}
+
+.hero-visual img {
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+  object-fit: cover;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.76rem;
+  color: var(--accent-dark);
+  font-weight: 800;
+}
+
+.section-heading h2 {
+  margin: 0;
+  font-size: clamp(1.6rem, 5vw, 2.8rem);
+  line-height: 1.05;
+}
+
+.card-grid, .feature-grid, .trust-grid {
+  display: grid;
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.card, .feature, .price-card, .included-card, .final-cta-box {
+  padding: 22px;
+}
+
+.card ul, .included-card ul { margin: 0; padding-left: 18px; line-height: 1.7; }
+.card p, .feature p, .teacher-copy p, .price-card p { line-height: 1.65; }
+.accent { background: linear-gradient(180deg, #fff6ef 0%, #f7e5d8 100%); }
+.centered-actions { justify-content: center; }
+
+.feature-grid { grid-template-columns: 1fr; }
+.feature {
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: rgba(255,255,255,0.6);
+}
+
+.journey-flow {
+  margin-top: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.journey-flow span {
+  padding: 12px 14px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  font-weight: 600;
+}
+
+.lesson-list {
+  margin: 18px 0 0;
+  padding-left: 20px;
+  line-height: 1.8;
+}
+
+.bonus-box {
+  margin-top: 18px;
+  padding: 18px;
+  border-left: 4px solid var(--accent);
+  background: #fff3ec;
+  border-radius: 16px;
+}
+
+.teacher-layout {
+  display: grid;
+  gap: 16px;
+  align-items: center;
+}
+
+.teacher-image img {
+  width: 100%;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.trust-gallery {
+  display: grid;
+  gap: 12px;
+}
+
+.trust-gallery img {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+}
+
+.price-card {
+  text-align: center;
+}
+
+.status-box,
+.legal-card {
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.72);
+  border-radius: 20px;
+}
+
+.status-box {
+  padding: 18px;
+  margin: 18px 0;
+  text-align: left;
+}
+
+.status-box strong {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.legal-card h1,
+.legal-card h2 {
+  margin-top: 0;
+}
+
+.legal-list {
+  margin: 0;
+  display: grid;
+  gap: 14px;
+}
+
+.legal-list div {
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+}
+
+.legal-list dt {
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.legal-list dd {
+  margin: 0;
+  color: var(--muted);
+}
+
+.price-card h2 {
+  margin: 0 0 10px;
+  font-size: clamp(2rem, 9vw, 4rem);
+}
+
+.faq-list {
+  margin-top: 18px;
+  display: grid;
+  gap: 10px;
+}
+
+.faq-list details {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 16px 18px;
+}
+
+.faq-list summary {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.final-cta-box {
+  text-align: center;
+}
+
+.site-footer {
+  padding: 34px 0 46px;
+  display: grid;
+  gap: 14px;
+  color: var(--muted);
+}
+
+.footer-links {
+  display: grid;
+  gap: 8px;
+}
+
+.footer-copy {
+  margin: 0;
+  font-size: 0.92rem;
+}
+
+@media (min-width: 760px) {
+  .hero { grid-template-columns: 1.1fr 0.9fr; align-items: stretch; }
+  .card-grid.two { grid-template-columns: repeat(2, 1fr); }
+  .card-grid.three { grid-template-columns: repeat(3, 1fr); }
+  .feature-grid { grid-template-columns: repeat(2, 1fr); }
+  .teacher-layout { grid-template-columns: 0.95fr 1.05fr; }
+  .trust-grid { grid-template-columns: 0.95fr 1.05fr; align-items: start; }
+  .trust-gallery { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1080px) {
+  .feature-grid { grid-template-columns: repeat(4, 1fr); }
+}
